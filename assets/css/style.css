@@ -1,0 +1,571 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+*{
+    margin: 0;
+    padding: 0; 
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    max-width: 1260px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+:root{
+    --skyblue-color: #0a8aff;
+    --dark-blue-color: #32325c;
+    --orange-red-color: #fc7c56;
+    --light-gray-color: lightgrey;
+    --light-blue-color: #f9fcff;
+    --light-sky-blue-color: #e6f2ff;
+}
+h2{
+    font-family: "Catamaran", sans-serif;
+}
+
+/* ====== header css starts here ====== */
+
+
+/* ====== sticky header starts here ====== */
+
+.header{
+    -webkit-transition: position 10s;
+  -moz-transition: position 10s;
+  -ms-transition: position 10s;
+  -o-transition: position 10s;
+  transition: position 5s;
+}
+
+.header.fixed{
+    
+    top: 20px;
+    width: 100%;
+    z-index: 99;
+    -webkit-transition: position 10s;
+  -moz-transition: position 10s;
+  -ms-transition: position 10s;
+  -o-transition: position 10s;
+  transition: position 5s;
+    animation: smoothScroll 1s forwards;
+    
+}
+.header.fixed .main-header{
+    background-color: #fff;
+    box-shadow: 0px 0px 6px rgba(0,0,0,.3);
+    padding: 0 30px;
+    border-radius: 8px;
+    width: 80%;
+    position: fixed;
+}
+
+
+@keyframes smoothScroll {
+	0% {
+		transform: translateY(-40px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+/* ====== sticky-header ends here ====== */
+
+
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: #fff;
+}
+
+.main-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
+}
+
+.header-content{
+    padding: 30px 0;
+}
+
+.header-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-list >li a{
+    text-transform: capitalize;
+    color: #546182;
+}
+
+.header-list >li:first-child span{
+    padding: 0 5px; 
+}
+
+.header-list >li span i{
+    color: #546182;
+}
+
+.last{
+    position: relative;
+    z-index: 1;
+}
+
+.last::after{
+    position: absolute;
+    height: 0;
+    width: 100%;
+    background-color: #546182;
+    opacity: 0.1;
+    content: '';
+    top: 0;
+    left: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.last >span{
+    z-index: 1;
+}
+
+.last:hover::after{
+    height: 100%;    
+}
+
+.header-list >li:nth-child(9) a{
+    color: #fff;
+    background-color: var(--skyblue-color);
+    text-align: center;
+    border-radius: 7px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 10px 18px;
+}
+
+/* ====== li-hover-effect starts here ====== */
+
+.header-list{
+    align-items: center;
+}
+
+.header-list >li{
+    position: relative;
+    margin-left: 1.5rem;
+    cursor: pointer;
+    /* background-color: #0a8aff; */
+}
+
+.header-list >li:hover a:not(.last)::before{
+    width: 100%; 
+} 
+
+.header-list >li a:not(.last)::before{
+    content: " ";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: -1px;
+    left: 0;
+    display: block;
+    top: 55px;
+    background-color: var(--orange-red-color);
+    box-sizing: border-box; 
+    transition: width .5s;
+}
+
+
+
+
+
+/* ====== li-hover-effect ends here ====== */
+
+
+/* ====== header css ends here ====== */
+
+
+/* ====== home-page css starts here ====== */
+
+.home-page{
+    padding-top: 100px;
+}
+
+.home-page-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 0;
+}
+
+.written-content{
+    flex: 1;
+}
+
+.write-text{
+    padding-bottom: 50px;
+}
+
+.home-image{
+    padding-left: 100px;
+}
+
+
+.written-content > h1{
+    color: var(--dark-blue-color);
+    font-size: 50px;
+    font-weight: 700;
+    font-family: "Catamaran", sans-serif;
+    line-height: 60px;
+}
+
+.written-content > h4{
+    color: gray;
+    font-size: 20px;
+    font-weight: 350;
+    line-height: 30px;
+    padding: 25px 0;
+    padding-bottom: 50px; 
+}
+
+.written-content > a{
+    color: #fff;
+    background-color: var(--orange-red-color);
+    padding: 20px 25px;
+    border-radius: 7px;
+    text-transform: uppercase;
+    font-weight: 500;
+    position: relative;
+}
+
+.written-content > a::after{
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #32325c;
+    opacity: 0.1;
+    transition: all 0.5s ease;
+}
+
+.written-content > a:hover::after{
+    height: 100%;
+}
+
+/* ====== home-page css ends here ====== */
+
+
+
+/* ====== section-achievements css starts here ====== */
+
+.section-achievements{
+    background-color: var(--skyblue-color);
+    z-index: 1;
+    position: relative;
+    height: 350px;
+}
+
+.achievements{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 0;
+}
+
+.achievements-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.image{
+    padding: 0 15px;
+}
+
+.happy-clients{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    color: #fff; 
+}
+
+
+.happy-clients >h1{
+    font-size: 50px;
+
+}
+
+.happy-clients >h4{
+    text-transform: capitalize;
+}
+
+.border{
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+
+/* ====== section-achievements css ends here ====== */
+
+
+/* ====== section-services css starts here ====== */
+
+.section-services{    
+    /* background-color: var(--light-blue-color); */
+    padding-bottom: 50px;
+    transform: translateY(-80px);
+    z-index: 9;
+    position: relative;
+}
+
+.section-services >div.container{
+    width: 70%;
+    
+}
+
+.services{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 5px 50px rgb(156 185 226 / 20%);
+    /* width: 70%; */
+    font-family: "Catamaran", sans-serif;
+    border-radius: 10px;  
+    background-color: #fff;
+    /* position: absolute;
+    z-index: 2; */
+    /* margin-top: -150px; */
+}
+
+.services-content:first-child{
+    padding: 50px 0;
+    padding-top: 100px;
+}
+
+.services-content{
+    text-align: center;
+}
+
+.services-content >h1{
+    text-transform: capitalize;
+    font-size: 35px;
+    font-family: "Catamaran", sans-serif;
+}
+
+.services-content >h4{
+    color: gray;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.services-img-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.services-inner-content{
+    height: 300px;
+    width: 300px;
+    padding: 0 25px;
+    font-family: "Catamaran", sans-serif;
+}
+
+.services-inner-content >img{
+    height: 95px;
+    width: auto;
+}
+
+.services-inner-content >h2{
+    text-transform: capitalize;
+    padding: 10px 0;
+}
+
+.services-inner-content >p{
+    font-size: 18px;
+    color: grey;
+    font-weight: 300;
+}
+
+
+/* ====== section-services css ends here ====== */
+
+
+/* ====== section-reasons css starts here ====== */
+
+.section-reasons{
+    background-color: var(--light-blue-color);
+}
+
+.reasons{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reasons-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    padding: 50px 0;
+}
+
+.reasons-inner-wrapper{
+    /* flex: 1; */
+}
+
+.reasons-inner-wrapper >h2{
+    font-size: 35px;
+    color: var(--dark-blue-color);
+}
+
+.reasons-inner-wrapper >p{
+    font-size: 17.5px;
+    line-height: 30px;
+    color: var(--dark-blue-color);
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    padding: 25px 0;
+}
+
+.reasons-inner-wrapper >a{
+    text-transform: capitalize;
+    color: var(--skyblue-color);
+    font-weight: 600;
+}
+
+.reasons-content-1{
+    flex-basis: 490px;
+    padding-right: 120px;
+}
+
+.reasons-content-2{
+    flex-basis: 600px;
+    padding-left: 120px;
+}
+
+
+/* ====== section-reasons css ends here ====== */
+
+
+/* ====== section-portfolio css starts here ====== */
+
+.section-portfolio{
+    background-color: var(--light-sky-blue-color);
+}
+
+.portfolio{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.portfolio-content >h2{
+    text-transform: capitalize;
+    color: var(--dark-blue-color);
+    font-weight: 700;
+    font-size: 35px;
+    padding-top: 80px;
+    padding-bottom: 25px;
+}
+
+.portfolio-image-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.portfolio-img{
+    margin: 15px 15px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.img-inner-content{
+    padding: 20px 0;
+}
+
+.img-inner-content >h2{
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--dark-blue-color);
+    transition: all .2s ease-in-out;
+}
+
+.img-inner-content >h4{
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--dark-blue-color);
+    font-weight: 300;
+    padding: 15px 0;
+}
+
+.portfolio-img:hover a div >h2{
+    color: var(--skyblue-color);
+}
+
+.portfolio-image-content >a{
+    text-align: center;
+}
+
+.discover{
+    padding-top: 60px;
+    padding-bottom: 120px;
+}
+
+.discover >a{
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: var(--orange-red-color);
+    padding: 20px 40px;
+    border-radius: 8px;
+    font-weight: 500;
+    position: relative;
+}
+
+.discover >a:after{
+    content: '';
+    background-color: rgb(39, 36, 36);
+    height: 0;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.1;
+    transition: all 0.3s ease;
+}
+
+.discover >a:hover:after{
+    height: 100%;
+}
+
+
+/* ====== section-portfolio css ends here ====== */
+
